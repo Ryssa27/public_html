@@ -20,7 +20,7 @@
               <a href="login.php">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>
-                  My Account
+                  Mon compte
                 </span>
               </a>
             </div>

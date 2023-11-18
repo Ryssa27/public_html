@@ -36,6 +36,16 @@ if(isset($_POST['but_submit'])){
 ?>
 <html>
     <head>
+        <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
         <title>Login Page</title>
             <!-- bootstrap core css -->
             <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
@@ -73,10 +83,7 @@ if(isset($_POST['but_submit'])){
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ">
                         <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="about.php"> About</a>
+                        <a class="nav-link" href="index.php">Accueil</a>
                         </li>
                     </ul>
                     </div>

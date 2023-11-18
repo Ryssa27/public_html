@@ -57,120 +57,15 @@ require_once "./../server/config.php";
                 Mygarage
               </span>
             </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.php"> About</a>
-                </li>
-              </ul>
-            </div>
           </nav>
         </div>
       </div>
-</header>
+  </header>
   <!-- end header section --> 
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Welcome to our shop
-                    </h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio.
-                    </p>
-                    <a href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Welcome to our shop
-                    </h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio.
-                    </p>
-                    <a href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Welcome to our shop
-                    </h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio.
-                    </p>
-                    <a href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel_btn_box">
-          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
+    
 
 
-  <!-- product section -->
+  <!-- service section -->
 
   <section class="product_section layout_padding">
     <div class="container">
@@ -188,7 +83,7 @@ require_once "./../server/config.php";
                   <div class='box'>
                     <div>
                       <a href='product.php?id=$row[id]'>
-                        <img src='images/p1.png' alt=''>
+                        <img src='images/$row[img]' alt=''>
                       </a> 
                     </div>
                     <div class='detail-box'>
@@ -210,15 +105,14 @@ require_once "./../server/config.php";
     </div>
   </section>
 
-  <!-- end product section -->
+  <!-- end service section -->
 
   <!-- client section -->
-
   <section class="client_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          What Says Our Customers
+          Ce que disent nos clients
         </h2>
       </div>
     </div>
@@ -233,12 +127,7 @@ require_once "./../server/config.php";
                     <i class="fa fa-quote-left" aria-hidden="true"></i>
                   </p>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it lookIt is a
-                    long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit enim nisi eveniet perspiciatis eos corrupti voluptate illum maiores dolore nobis, natus tempore error? Magni quibusdam cupiditate hic dolore, animi fugit.
                   </p>
                 </div>
                 <div class="client-id">
@@ -247,11 +136,15 @@ require_once "./../server/config.php";
                   </div>
                   <div class="name">
                     <h5>
-                      James Dew
+                      Alain Deloin
                     </h5>
-                    <h6>
-                      Photographer
-                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -265,12 +158,8 @@ require_once "./../server/config.php";
                     <i class="fa fa-quote-left" aria-hidden="true"></i>
                   </p>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it lookIt is a
-                    long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look
+                    Beaucoup de fonctionnalités sont manquantes mais pour quelqu'un qui n'avait jamais fait de PHP ou gérer une base de donnée, j'estime qu'en 3 jours de boulot c'est pas mal.
+                    Je m'excuse auprès des gens qui vont me corriger, le travail va certainement leur sembler baclé et cela va être une source de frustration.
                   </p>
                 </div>
                 <div class="client-id">
@@ -279,11 +168,13 @@ require_once "./../server/config.php";
                   </div>
                   <div class="name">
                     <h5>
-                      James Dew
+                      Nono Lerobot
                     </h5>
-                    <h6>
-                      Photographer
-                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -297,12 +188,8 @@ require_once "./../server/config.php";
                     <i class="fa fa-quote-left" aria-hidden="true"></i>
                   </p>
                   <p>
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it lookIt is a
-                    long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look
+                    La qualité du service et l'amabilité du personnel sont toujours au rendez-vous.
+                    Mais le garage a tant de succès qu'il est difficile de trouver des disponibiltés.
                   </p>
                 </div>
                 <div class="client-id">
@@ -311,11 +198,15 @@ require_once "./../server/config.php";
                   </div>
                   <div class="name">
                     <h5>
-                      James Dew
+                      Mina Nina
                     </h5>
-                    <h6>
-                      Photographer
-                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -327,13 +218,13 @@ require_once "./../server/config.php";
             <span>
               <i class="fa fa-angle-left" aria-hidden="true"></i>
             </span>
-            <span class="sr-only">Previous</span>
+            <span class="sr-only">Précédent</span>
           </a>
           <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
             <span>
               <i class="fa fa-angle-right" aria-hidden="true"></i>
             </span>
-            <span class="sr-only">Next</span>
+            <span class="sr-only">Suivant</span>
           </a>
         </div>
       </div>
