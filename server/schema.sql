@@ -4,7 +4,7 @@ USE garage_app;
 CREATE TABLE users (
 	id integer PRIMARY KEY AUTO_INCREMENT,
 	userid varchar(50) NOT NULL,
-	password varchar(30) NOT NULL,
+	password varchar(255) NOT NULL,
 	lastname varchar(25),
 	firstname varchar(25),
 	access varchar(50) NOT NULL

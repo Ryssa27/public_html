@@ -1,23 +1,32 @@
 <?php
 
-require_once "./../server/config.php";
-
 session_start();
-if (isset($_SESSION["user_id"])) {
-    //$mysqli = require __DIR__."./../server/config.php";
-    $sql_query =sprintf("SELECT * FROM users WHERE id={$_SESSION["user_id"]}");
-    //$sql = "SELECT * FROM users WHERE id = {$_SESSION["user_id"]}";
-    $result = mysqli_query($con,$sql_query);
-    //$result = $mysqli->query($sql);
-    $user = $result-> fetch_assoc();   
-    if ($user["access"]=='admin') {
+
+require_once "./../server/config.php";
+require_once("./../client/functions/auth.php");
+
+if (Auth::isLogged()) {
+    $role=(Auth::getRole());
+    $userid=(Auth::getIdUser());
+    if ($role=='admin') {
         $sql_query_users =sprintf("SELECT * FROM users WHERE access='employe'");
         $listusers = mysqli_query($con,$sql_query_users);
 
         $sql_query_horaire =sprintf("SELECT * FROM schedule");
         $horaires = mysqli_query($con,$sql_query_horaire);
-    }     
-}
+    } elseif ($role=='employe') {
+        $sql_query_users =sprintf("SELECT * FROM users WHERE access='employe'");
+        $listusers = mysqli_query($con,$sql_query_users);
+
+        $sql_query_horaire =sprintf("SELECT * FROM schedule");
+        $horaires = mysqli_query($con,$sql_query_horaire);
+    } elseif ($role=='client') {
+        $sql_query_annonce =sprintf("SELECT * FROM annonce WHERE client_id='".$userid."'");
+        $listannonce = mysqli_query($con,$sql_query_annonce);
+    }  
+}else {
+    header("Location:login.php");
+};
 ?>
 
 <html>
@@ -91,14 +100,16 @@ if (isset($_SESSION["user_id"])) {
         </header>
         <!-- end header section -->
 
-        <!-- Management section -->
+        <!-- administrateur section -->
         
-            <?php if (!isset($_SESSION["user_id"]))
+            <?php if (!Auth::isLogged())
             {
                 echo "Problème lors de l'identification";
             } else {
-                if ($user["access"]=='admin') 
+                //administrateur section
+                if ($role=='admin') 
                 { 
+                    
                     // Table gestion utilisateur
                     echo"
                     <div class='container px-3 py-5'> 
@@ -195,10 +206,102 @@ if (isset($_SESSION["user_id"])) {
                         
                         ";
                 }
+                elseif (($role=='employe'))
+                {
+
+                }
+                elseif (($role=='client'))
+                {
+                    //Tableau annonce
+                    echo "
+                    <div class='container px-3 py-5'> 
+                        <div class='py-5'>
+                            <section class='product_section layout_padding'>
+                                <div class='container>
+                                    <div class='heading_container heading_center'>
+                    ";
+                    if (!$row){
+                        echo "<h3 class='text-center'>Vous n'avez pas d'annonce</h3>";
+                    }else{
+                        echo "<h3 class='text-center'>Vos annonces</h3>";
+                    }                
+                    echo "
+                                    </div>
+                                    <div class='row'>
+                    ";
+                    
+                    while($row = mysqli_fetch_array($listannonce)) 
+
+                    // id integer PRIMARY KEY AUTO_INCREMENT,
+                    // status varchar(25) NOT NULL,
+                    // brand varchar(25) NOT NULL,
+                    // model varchar(25) NOT NULL,
+                    // price integer NOT NULL,
+                    // year integer NOT NULL,
+                    // image_link varchar(255) NOT NULL,
+                    // km integer NOT NULL,
+                    // fuel_type varchar(10),
+                    // gearbox_type varchar(10),
+                    // client_id integer,
+                    {
+                        echo "
+                                <div class='col-sm-6 col-lg-4 text-center'>
+                                    <div class='box border'>
+                                        <h3>$row[brand] - $row[model]</h3>
+                                        <img src='images/annonces/$row[image_link]' alt=''>
+                                        <table class='table table-border text-center'>
+                                                    <tr>
+                                                        <th>Status:</th>
+                                                        <td>$row[status]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Marque:</th>
+                                                        <td>$row[brand]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Model:</th>
+                                                        <td>$row[model]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Année:</th>
+                                                        <td>$row[year]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Prix:</th>
+                                                        <td>$row[price]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Energie:</th>
+                                                        <td>$row[fuel_type]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Boite:</th>
+                                                        <td>$row[gearbox_type]</td>
+                                                    </tr>
+                                        </table>
+                                        <a href='./functions/deleteannonce.php?id=$row[id]' class='btn btn-danger'>Supprimer l'annonce</a></td>            
+                                    </div>
+                                    
+                                </div>
+                        ";
+                    }
+                        echo "
+                                </div>
+                                <div class='box'>
+                                    <div class='btn_box'>
+                                        <a href='annonce.php' class='view_more-link'>Proposer une annonce</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        </div>
+                    </div>
+                        ";
+                }    
             }
+            
             ?>
         
         <!-- End Management section -->
-        <?php include ("footer.php"); ?>
     </body>
 </html>

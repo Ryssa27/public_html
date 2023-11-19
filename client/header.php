@@ -7,12 +7,12 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call : +33 1234556789
+                  01 23 45 56 78
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  Email : MyGarage@gmail.com
+                  MyGarage@gmail.com
                 </span>
               </a>
             </div>
