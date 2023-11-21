@@ -111,7 +111,6 @@ require_once "./../server/config.php";
   <!-- end service section -->
 
   <!-- annonce section -->
-
   <section class="product_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
@@ -124,46 +123,44 @@ require_once "./../server/config.php";
                     {
                       echo "
                           <div class='col-sm-6 col-lg-4 text-center'>
+                          
                               <div class='box'>
-                                <div>
-                                  <h3>$row[brand] - $row[model]</h3>
-                                  <img src='images/annonces/$row[image_link]' alt=''>
-                                <div>
-                                <table class='table table-border text-center'>
-                                  <tr>
-                                      <th>Status:</th>
-                                      <td>$row[status]</td>
-                                  </tr>
-                                  <tr>
-                                      <th>Marque:</th>
-                                      <td>$row[brand]</td>
-                                  </tr>
-                                  <tr>
-                                      <th>Model:</th>
-                                      <td>$row[model]</td>
-                                  </tr>
-                                  <tr>
-                                      <th>Année:</th>
-                                      <td>$row[year]</td>
-                                  </tr>
-                                  <tr>
-                                      <th>Prix:</th>
-                                      <td>$row[price]</td>
-                                  </tr>
-                                  <tr>
-                                      <th>Energie:</th>
-                                      <td>$row[fuel_type]</td>
-                                  </tr>
-                                  <tr>
-                                      <th>Boite:</th>
-                                      <td>$row[gearbox_type]</td>
-                                  </tr>
-                                </table>
+                              <h3>$row[brand] - $row[model]</h3>
+                              <div class='img-box'>
+                                
+                                <img src='images/annonces/$row[image_link]' alt=''>
                               </div>
+                              <table class='table table-border text-center'>
+                                <tr>
+                                    <th>Marque:</th>
+                                    <td>$row[brand]</td>
+                                </tr>
+                                <tr>
+                                    <th>Model:</th>
+                                    <td>$row[model]</td>
+                                </tr>
+                                <tr>
+                                    <th>Année:</th>
+                                    <td>$row[year]</td>
+                                </tr>
+                                <tr>
+                                    <th>Prix:</th>
+                                    <td>$row[price]</td>
+                                </tr>
+                                <tr>
+                                    <th>Energie:</th>
+                                    <td>$row[fuel_type]</td>
+                                </tr>
+                                <tr>
+                                    <th>Boite:</th>
+                                    <td>$row[gearbox_type]</td>
+                                </tr>
+                              </table>
+                            </div>
                           </div>
                         ";
-                    }
-                    ?>  
+                  }
+                ?>  
       </div>
     </div>
   </section>

@@ -28,7 +28,7 @@ CREATE TABLE annonce (
 	image_link varchar(255) NOT NULL,
 	km integer NOT NULL,
 	fuel_type varchar(10),
-	gearbox_type varchar(10),
+	gearbox_type varchar(12),
 	client_id integer,
 	FOREIGN KEY (client_id) REFERENCES users(id)
 	);    
